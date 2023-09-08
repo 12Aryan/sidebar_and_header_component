@@ -1,7 +1,9 @@
+"use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Header from "@/Components/Header/Header";
 import Sidebar from "@/Components/Sidebar/Sidebar";
+import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,16 +13,23 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const [toggle, setToggle] = useState(false);
+
+  const getHeaderState = (data) => {
+    setToggle(data);
+  };
   return (
     <html lang="en">
       <body className={inter.className}>
         <div className=" parent-wrapper flex min-h-screen">
-          <Sidebar />
+          <Sidebar toggle={toggle} />
           <div className="w-full flex flex-col" style={{ width: "100%" }}>
             <div className="header-parent w-full flex  bg-gray-950  justify-between px-4 py-2 text-white items-center ">
-              <Header />
+              <Header text={getHeaderState} />
             </div>
-            <div className="children-wrapper bg-gray-950 flex-1">{children}</div>
+            <div className="children-wrapper bg-gray-500 flex-1">
+              {children}
+            </div>
           </div>
         </div>
       </body>

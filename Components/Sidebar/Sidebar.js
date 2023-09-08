@@ -3,16 +3,13 @@ import React, { useState } from "react";
 import { sidebarData } from "./SidebarData";
 import Link from "next/link";
 import './sidebar.css'
-const Sidebar = () => {
-  const [toggle, setToggle] = useState(false)
-  console.log(toggle);
+const Sidebar = ({toggle}) => {
+
   return (
     
     <>
-      <div className={`${toggle?'sidebar-toggle': ''} min-h-full sidebar-parent  bg-gray-950   text-white px-2` } style= {{width: '15%'}}>
-        <div className="pt-4" onClick={()=>{
-         setToggle(!toggle)
-        }}>
+      <div className={`${toggle?'sidebar-toggle': 'sidebar'} min-h-full sidebar-parent  bg-gray-950   text-white px-2` } >
+        <div className="pt-4" >
           <h1 >Logo</h1>
         </div>
         {sidebarData.map((item, id) => {

@@ -3,12 +3,12 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { headerData } from "./HeaderData";
 
-const Header = () => {
+const Header = (prop) => {
   const [toggle, setToggle]= useState(false)
    const toggleSidebar=()=>{
     return setToggle(!toggle)
   }
-  console.log("-->", toggle);
+ prop.text(toggle)
   return (
     <>
       <div className="flex w-full justify-between">
