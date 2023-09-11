@@ -1,8 +1,8 @@
 "use client";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Header from "@/Components/Header/Header";
-import Sidebar from "@/Components/Sidebar/Sidebar";
+import Header from "@/Components/shared/Header/Header";
+import Sidebar from "@/Components/shared/Sidebar/Sidebar";
 import { useState } from "react";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,7 +24,7 @@ export default function RootLayout({ children }) {
         <div className=" parent-wrapper flex min-h-screen">
           <Sidebar toggle={toggle} />
           <div className="w-full flex flex-col" style={{ width: "100%" }}>
-            <div className="header-parent w-full flex  bg-gray-950  justify-between px-4 py-2 text-white items-center ">
+            <div className="header-parent w-full flex  bg-gray-700 justify-between px-4 py-2 text-white items-center ">
               <Header text={getHeaderState} />
             </div>
             <div className="children-wrapper bg-gray-500 flex-1">

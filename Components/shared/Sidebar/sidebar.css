@@ -1,0 +1,8 @@
+.sidebar-toggle{
+    width: 3%!important; 
+    transition: width 0.7s ease;
+}
+.sidebar{
+    width: 15%;
+    transition: width 0.7s ease;
+}

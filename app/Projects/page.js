@@ -1,13 +1,13 @@
 "use client";
 
-import ImageGallery from "@/Components/image_gallery/ImageGallery";
+import ImageGallery from "@/Components/features/image_gallery/Gallery";
 import React, { useEffect, useState } from "react";
 
 
 const Projects = () => {
   return (
     <div className="">
-   <ImageGallery/> 
+
     </div>
   );
 };
